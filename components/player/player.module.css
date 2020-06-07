@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.root > * {
+  margin: 10px;
+}
+
+.portrait {
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+}
+
+.playerName {
+  font-weight: bold;
+}

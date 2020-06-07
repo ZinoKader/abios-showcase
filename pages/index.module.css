@@ -1,0 +1,35 @@
+.title {
+  margin: 0;
+  width: 100%;
+  padding-top: 80px;
+  line-height: 1.15;
+  font-size: 48px;
+  font-family: Poppins;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  font-family: Nunito Sans;
+}
+
+.row {
+  max-width: 850px;
+  margin: 80px auto 40px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.row {
+  list-style: none;
+  padding: 0;
+}
+
+.card {
+  flex: 0 0 calc(100% / 3);
+}

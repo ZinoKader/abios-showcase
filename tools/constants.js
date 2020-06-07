@@ -1,0 +1,2 @@
+export const QUALIFIED_DPC_POINTS = 3690;
+export const QUALIFIED_MAX_STANDING = 12;

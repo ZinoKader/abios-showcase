@@ -1,0 +1,114 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  max-width: 800px;
+  margin: 15px;
+  padding: 25px;
+  background: #f8f8f8;
+  border: 1px solid #0000000d;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+  font-family: Nunito Sans;
+}
+
+.root:hover {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.root p {
+  font-family: Nunito Sans;
+  color: rgb(72, 72, 88);
+}
+
+.root h4 {
+  font-family: Poppins;
+  color: rgb(72, 72, 88);
+}
+
+.detailed {
+  margin: 50px auto;
+}
+
+.detailed:hover {
+  cursor: unset;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07) !important;
+}
+
+.detailed .backButton {
+  height: 30px;
+  width: 30px;
+  background: url("../../static/arrow-left.svg");
+  align-self: flex-start;
+  cursor: pointer;
+}
+
+.detailed h4 {
+  font-size: 24px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.header img {
+  width: 50px;
+  height: 50px;
+}
+
+.divider {
+  border: 1px solid black;
+  width: 90%;
+}
+
+.pillContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 70%;
+}
+
+.detailed .pillContainer {
+  width: 25%;
+}
+
+.pill {
+  border-radius: 20px;
+  padding: 6px;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.secured {
+  background: #99e696;
+}
+
+.qualified {
+  background: #f7f785;
+}
+
+.unqualified {
+  background: #f98e89;
+}
+
+.playerList {
+  list-style: none;
+  margin: 50px;
+  padding: 0;
+}
+
+.playerList li {
+  border-top: 1px solid #00000030;
+}
+
+.playerList li:nth-child(1) {
+  border-top: none;
+}
