@@ -14,10 +14,10 @@ const Home = () => {
 
       <Layout>
         <div className={styles.hero}>
-          <h1 className={styles.title}>DotA Standings</h1>
+          <h1 className={styles.title}>DotA 2 Standings</h1>
 
           <p className={styles.description}>
-            Current DotA standings. Data from {""}
+            Current DotA 2 Pro Circuit standings. Data from {""}
             <a href="//www.abiosgaming.com" target="_blank">
               Abios
             </a>

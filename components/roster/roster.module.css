@@ -12,6 +12,7 @@
     0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07);
   cursor: pointer;
   font-family: Nunito Sans;
+  text-align: center;
 }
 
 .root:hover {
@@ -45,6 +46,12 @@
   background: url("../../static/arrow-left.svg");
   align-self: flex-start;
   cursor: pointer;
+  transition: 0.15s;
+}
+
+.backButton:hover {
+  opacity: 0.7;
+  filter: drop-shadow(2px 4px 6px #00000036);
 }
 
 .detailed h4 {
@@ -63,9 +70,23 @@
   height: 50px;
 }
 
-.divider {
+.detailed .header img {
+  width: 110px;
+  height: 110px;
+}
+
+.root .divider {
   border: 1px solid black;
   width: 90%;
+  margin: auto;
+}
+
+.standing {
+  margin-bottom: 0;
+}
+
+.detailed .points {
+  font-weight: bold;
 }
 
 .pillContainer {
@@ -99,16 +120,22 @@
   background: #f98e89;
 }
 
+.subHeading {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
 .playerList {
   list-style: none;
-  margin: 50px;
+  margin: 10px 50px;
   padding: 0;
 }
 
 .playerList li {
+  padding: 30px;
   border-top: 1px solid #00000030;
 }
 
-.playerList li:nth-child(1) {
-  border-top: none;
+.playerList li:last-child {
+  border-bottom: 1px solid #00000030;
 }

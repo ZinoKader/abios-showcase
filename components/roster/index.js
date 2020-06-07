@@ -24,9 +24,10 @@ const Roster = ({ teams, players, points, standing, detailed }) => {
         <img src={team.images.default} />
         <h4>{team.name}</h4>
         <div className={styles.divider}></div>
-        <h4>
+        <h4 className={styles.standing}>
           {detailed && "Standing: "} {standing}
         </h4>
+        <p className={styles.points}>{points} pts</p>
         <div className={styles.pillContainer}>
           {secured && (
             <div className={classNames(styles.pill, styles.secured)}>
@@ -47,13 +48,16 @@ const Roster = ({ teams, players, points, standing, detailed }) => {
       </div>
 
       {detailed && (
-        <ul className={styles.playerList}>
-          {players.map((player) => (
-            <li key={player.id}>
-              <Player player={player} />
-            </li>
-          ))}
-        </ul>
+        <>
+          <h4 className={styles.subHeading}>Players</h4>
+          <ul className={styles.playerList}>
+            {players.map((player) => (
+              <li key={player.id}>
+                <Player player={player} />
+              </li>
+            ))}
+          </ul>
+        </>
       )}
     </div>
   );
