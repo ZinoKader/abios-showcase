@@ -52,8 +52,9 @@ const Roster = ({ teams, players, points, standing, detailed, matchList }) => {
           <h4 className={styles.subHeading}>Players</h4>
           <PlayerList players={players} />
 
-          <h4 className={styles.subHeading}>Matches</h4>
-          {matchList}
+          {matchList && <h4 className={styles.subHeading}>Matches</h4> && {
+              matchList,
+            }}
         </>
       )}
     </div>
