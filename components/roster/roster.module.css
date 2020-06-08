@@ -43,7 +43,7 @@
 .detailed .backButton {
   height: 30px;
   width: 30px;
-  background: url("../../static/arrow-left.svg");
+  background: url("/static/arrow-left.svg");
   align-self: flex-start;
   cursor: pointer;
   transition: 0.15s;
@@ -76,7 +76,7 @@
 }
 
 .root .divider {
-  border: 1px solid black;
+  border: 2px solid #000000b0;
   width: 90%;
   margin: auto;
 }
@@ -121,21 +121,8 @@
 }
 
 .subHeading {
-  margin-top: 40px;
-  margin-bottom: 10px;
-}
-
-.playerList {
-  list-style: none;
-  margin: 10px 50px;
-  padding: 0;
-}
-
-.playerList li {
-  padding: 30px;
-  border-top: 1px solid #00000030;
-}
-
-.playerList li:last-child {
-  border-bottom: 1px solid #00000030;
+  border-bottom: 1px solid #00000077;
+  padding-bottom: 20px;
+  margin: 75px auto 10px auto;
+  width: 90%;
 }

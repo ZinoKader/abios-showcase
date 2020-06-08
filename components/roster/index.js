@@ -2,14 +2,14 @@ import React from "react";
 import Link from "next/link";
 import styles from "./roster.module.css";
 import classNames from "classnames";
-import Player from "../player";
+import PlayerList from "../playerlist/";
 import {
   QUALIFIED_DPC_POINTS,
   QUALIFIED_MAX_STANDING,
 } from "../../tools/constants";
-import { number, bool, array } from "prop-types";
+import { number, bool, array, node } from "prop-types";
 
-const Roster = ({ teams, players, points, standing, detailed }) => {
+const Roster = ({ teams, players, points, standing, detailed, matchList }) => {
   const [team] = teams;
   const secured = points > QUALIFIED_DPC_POINTS;
   const qualified = standing <= QUALIFIED_MAX_STANDING;
@@ -50,13 +50,10 @@ const Roster = ({ teams, players, points, standing, detailed }) => {
       {detailed && (
         <>
           <h4 className={styles.subHeading}>Players</h4>
-          <ul className={styles.playerList}>
-            {players.map((player) => (
-              <li key={player.id}>
-                <Player player={player} />
-              </li>
-            ))}
-          </ul>
+          <PlayerList players={players} />
+
+          <h4 className={styles.subHeading}>Matches</h4>
+          {matchList}
         </>
       )}
     </div>
@@ -64,11 +61,12 @@ const Roster = ({ teams, players, points, standing, detailed }) => {
 };
 
 Roster.propTypes = {
-  teams: array,
+  teams: array.isRequired,
   players: array,
-  points: number,
-  standing: number,
+  points: number.isRequired,
+  standing: number.isRequired,
   detailed: bool,
+  matchList: node,
 };
 
 export default Roster;

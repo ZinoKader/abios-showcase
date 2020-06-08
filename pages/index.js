@@ -27,12 +27,12 @@ const Home = () => {
           <div className={styles.row}>
             {getRosters()
               .sort(rosterDpcCompare)
-              .map(({ teams, dpc_points, teams: { 0: team } }, i) => (
+              .map(({ teams, dpc_points, id }, i) => (
                 <Link
-                  key={team.id}
+                  key={id}
                   href={{
                     pathname: "/team-details",
-                    query: { id: team.id },
+                    query: { id },
                   }}
                 >
                   <div className={styles.card}>

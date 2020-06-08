@@ -1,20 +1,19 @@
 import { object } from "prop-types";
 import styles from "./player.module.css";
-import { POSITION_IMAGE } from "../../tools/constants";
+import { ROLE_IMAGE } from "../../../tools/constants";
 
 const Player = ({ player }) => {
-  const realPlayerName =
-    player.first_name || player.last_name
+  const playerName =
+    player.first_name && player.last_name
       ? player.first_name + " " + player.last_name
       : "N/A";
-  const roleImageUrls =
-    player.roles.length > 0
-      ? player.roles[0].name.includes("/")
-        ? player.roles[0].name
-            .split("/")
-            .map((role) => POSITION_IMAGE[parseInt(role)])
-        : [POSITION_IMAGE[parseInt(player.roles[0].name)]]
-      : "";
+
+  const playerRoles = player.roles.length > 0 && player.roles[0];
+  const roleImageUrls = playerRoles
+    ? playerRoles.name.includes("/")
+      ? playerRoles.name.split("/").map((role) => ROLE_IMAGE[parseInt(role)])
+      : [ROLE_IMAGE[parseInt(playerRoles.name)]]
+    : undefined;
 
   return (
     <div className={styles.root}>
@@ -26,7 +25,7 @@ const Player = ({ player }) => {
         </p>
       </div>
       <p className={styles.playerName}>
-        {realPlayerName} |
+        {playerName} |
         <span className={styles.nickName}> {player.nick_name}</span>
       </p>
       {roleImageUrls && (
@@ -45,7 +44,7 @@ const Player = ({ player }) => {
 };
 
 Player.propTypes = {
-  player: object,
+  player: object.isRequired,
 };
 
 export default Player;

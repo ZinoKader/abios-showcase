@@ -1,0 +1,59 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.side,
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+  justify-content: center;
+  align-items: center;
+  flex-basis: calc(100% / 3);
+}
+
+@media screen and (max-width: 800px) {
+  .side,
+  .center {
+    flex-basis: 100%;
+  }
+}
+
+.center .scores {
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.side p {
+  font-weight: bold;
+}
+
+.side img {
+  justify-self: center;
+  width: 100px;
+  height: 100px;
+}
+
+.dateIcon {
+  width: 15px;
+  height: 15px;
+  background: url("/static/clock-solid.svg");
+}
+
+.date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  font-size: 0.8rem;
+  font-family: Nunito Sans;
+}
+
+.date p {
+  margin-left: 10px;
+}

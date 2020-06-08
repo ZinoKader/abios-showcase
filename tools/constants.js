@@ -1,7 +1,7 @@
 export const QUALIFIED_DPC_POINTS = 3690;
 export const QUALIFIED_MAX_STANDING = 12;
 
-export const POSITION_IMAGE = {
+export const ROLE_IMAGE = {
   1: "/static/positions/carry.png",
   2: "/static/positions/mid.png",
   3: "/static/positions/off_lane.png",

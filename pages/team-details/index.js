@@ -1,12 +1,17 @@
-import React, { useRef } from "react";
+import React from "react";
 import Head from "../../components/head";
 import Roster from "../../components/roster";
+import MatchList from "../../components/matchlist";
 import Layout from "../../components/layout";
-import { getRosterByTeamId, getTeamStanding } from "../../api/api";
+import {
+  getRoster,
+  getRosterStanding,
+  getRosterTournaments,
+} from "../../api/api";
 import { number } from "prop-types";
 
 const TeamDetails = ({ id }) => {
-  const { teams, players, dpc_points } = getRosterByTeamId(id);
+  const { teams, players, dpc_points } = getRoster(id);
   const [team] = teams;
 
   return (
@@ -17,7 +22,10 @@ const TeamDetails = ({ id }) => {
           teams={teams}
           players={players}
           points={dpc_points}
-          standing={getTeamStanding(id)}
+          standing={getRosterStanding(id)}
+          matchList={
+            <MatchList tournaments={getRosterTournaments(id)} showControls />
+          }
           detailed
         />
       </Layout>

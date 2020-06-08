@@ -10,25 +10,26 @@ export const getRosters = () => {
   let rosters = [];
   data.forEach((tournament) => {
     tournament.rosters.forEach((r1) => {
-      !rosters.some((r2) => r1.teams[0].id == r2.teams[0].id) &&
-        rosters.push(r1);
+      !rosters.some((r2) => r1.id == r2.id) && rosters.push(r1);
     });
   });
   return rosters;
 };
 
-export const getRosterByTeamId = (id) => {
+export const getRoster = (id) => {
   for (const tournament of data) {
-    for (const roster of tournament.rosters) {
-      const [team] = roster.teams;
-      if (team.id == id) {
-        return roster;
-      }
+    if (Object.values(tournament.seeding).includes(id)) {
+      return tournament.rosters.find((roster) => roster.id == id);
     }
   }
 };
 
-export const getTeamStanding = (id) =>
+export const getRosterStanding = (id) =>
   getRosters()
     .sort(rosterDpcCompare)
-    .findIndex(({ teams: { 0: team } }) => id == team.id) + 1;
+    .findIndex((roster) => roster.id == id) + 1;
+
+export const getRosterTournaments = (id) =>
+  data.filter((tournament) => {
+    return Object.keys(tournament.scores).includes(id.toString());
+  });
