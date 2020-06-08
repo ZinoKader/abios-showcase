@@ -11,7 +11,6 @@ export const hourMinuteDiffFormat = (d1, d2) => {
 };
 
 export const ymdFormat = (d) => {
-  console.log(d.getFullYear());
   return [
     d.getFullYear(),
     (parseInt(d.getMonth()) + 1).toString().padStart(2, "0"),
