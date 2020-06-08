@@ -1,6 +1,6 @@
 # AbiosGaming frontend showcase
 
-## DotA 2 visualization showcase for AbiosGaming Built with React and NextJS
+DotA 2 visualization showcase for AbiosGaming Built with React and NextJS.
 
 ## Build & Run
 
