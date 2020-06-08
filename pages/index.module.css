@@ -22,7 +22,6 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
 }
 
 .row {
@@ -32,4 +31,10 @@
 
 .card {
   flex: 0 0 calc(100% / 3);
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    flex: 0 0 calc(100% / 2);
+  }
 }
